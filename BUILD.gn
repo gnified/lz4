@@ -1,0 +1,19 @@
+config("lz4_config") {
+  include_dirs = [ "lib" ]
+}
+
+static_library("lz4") {
+  sources = [
+    "lib/lz4.c",
+    "lib/lz4.h",
+    "lib/lz4frame.c",
+    "lib/lz4frame.h",
+    "lib/lz4frame_static.h",
+    "lib/lz4hc.c",
+    "lib/lz4hc.h",
+    "lib/xxhash.c",
+    "lib/xxhash.h",
+  ]
+
+  public_configs = [ ":lz4_config" ]
+}
